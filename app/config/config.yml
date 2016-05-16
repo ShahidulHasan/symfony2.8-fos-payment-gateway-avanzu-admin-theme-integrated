@@ -65,3 +65,15 @@ fos_user:
 
 assetic:
     use_controller: false
+
+payum:
+    security:
+        token_storage:
+            Bundle\PaymentGatewayBundle\Entity\PaymentToken: { doctrine: orm }
+
+    storages:
+        Bundle\PaymentGatewayBundle\Entity\Payment: { doctrine: orm }
+
+    gateways:
+        offline:
+            factory: offline

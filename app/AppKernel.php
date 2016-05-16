@@ -21,9 +21,11 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Avanzu\AdminThemeBundle\AvanzuAdminThemeBundle(),
+            new Payum\Bundle\PayumBundle\PayumBundle(),
 
             new Bundle\UserBundle\UserBundle(),
             new Bundle\DefaultBundle\DefaultBundle(),
+            new Bundle\PaymentGatewayBundle\PaymentGatewayBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
